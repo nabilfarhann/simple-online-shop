@@ -12,6 +12,7 @@ connectDB();
 
 const products = require("./routes/Products");
 const orders = require("./routes/Orders");
+const payment = require("./routes/Payment");
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use(cors());
 
 app.use("/api/", products);
 app.use("/api/", orders);
+app.use("/payment/", payment);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

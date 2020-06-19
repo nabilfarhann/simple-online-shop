@@ -8,7 +8,10 @@ class ProductDetail extends Component {
     this.state = {
       product: [],
       id: props.match.params.id,
+      quantity: 1
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -23,6 +26,22 @@ class ProductDetail extends Component {
       .catch((error) => {
         console.log(error);
       });
+  }
+
+  handleChange(e) {
+    const value = e.target.value;
+    this.setState({
+      quantity: value,
+    });
+  }
+
+  handleClick(e) {
+    const product = this.state.product;
+    const quantity = this.state.quantity;
+    axios.post("/api/order", { product, quantity }).then((res) => {
+      console.log("👉 Returned data:", res.data);
+      this.props.history.push(`/my-order`);
+    });
   }
 
   render() {
@@ -40,15 +59,32 @@ class ProductDetail extends Component {
                   alt={product.name}
                 />
               </div>
-                <div className="card-body d-flex flex-column">
-                  <h5 className="card-title">{product.name}</h5>
-                  <p className="card-text">{product.description}</p>
-                  <p className="card-text">
-                    <small className="text-muted">{product.price}</small>
-                  </p>
-                  <Button className="align-self-end mt-auto btn btn-lg btn-block btn-primary">
-                    Test
-                  </Button>
+              <div className="card-body d-flex flex-column">
+                <h5 className="card-title">{product.name}</h5>
+                <p className="card-text">{product.description}</p>
+                <p className="card-text">
+                  <span className="badge badge-dark">{product.price}</span>
+                </p>
+                <div className="form-group row">
+                  <label
+                    htmlFor="example-number-input"
+                    className="col-2 col-form-label"
+                  >
+                    Quantity
+                  </label>
+                  <div className="col-10">
+                    <input
+                      className="form-control"
+                      type="number"
+                      defaultValue="1"
+                      onChange={this.handleChange.bind(this)}
+                      id="example-number-input"
+                    />
+                  </div>
+                </div>
+                <Button onClick={this.handleClick} className="align-self-end mt-auto btn btn-lg btn-block btn-dark">
+                  Order
+                </Button>
               </div>
             </div>
           </div>

@@ -33,10 +33,13 @@ const OrderSchema = new Schema({
         type: String,
         required: true
       },
+      imgUrl: {
+        type: String,
+      },
       qty: {
         type: Number,
         min: 1,
-        max: 99,
+        max: 99999999,
         required: true
       }
     }

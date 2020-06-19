@@ -3,6 +3,9 @@ import axios from "axios";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import { Container, Row, Button } from "react-bootstrap";
+// import uniqid from "uniqid";
+// const id = uniqid('user-');
+// const user = localStorage.setItem('currentUser', id);
 
 class ProductList extends Component {
   constructor() {
@@ -31,7 +34,8 @@ class ProductList extends Component {
     const products = this.state.products;
     return (
       <Container>
-        <h3>List of products</h3>
+        <br />
+        <h1 className="mt-3">Products</h1>
         <Row>
           {products
             ? products.map((product, index) => (
@@ -45,22 +49,13 @@ class ProductList extends Component {
                     <div className="card-body">
                       <h4 className="card-title">{product.name}</h4>
                       <p className="card-text">{product.description}</p>
-                      <div className="options d-flex flex-fill">
-                        <select className="custom-select mr-1">
-                          <option defaultChecked>Size</option>
-                          <option value="1">Small</option>
-                          <option value="2">Medium</option>
-                          <option value="3">Large</option>
-                        </select>
-                      </div>
                       <div className="buy d-flex justify-content-between align-items-center">
                         <div className="price text-success">
-                          <h5 className="mt-4">{product.price}</h5>
+                          <h4 className="mt-4">RM{product.price.toFixed(2)}</h4>
                         </div>
                         <Link to={`/productInfo/${product.urlId}`}>
                           <Button className="btn btn-dark mt-3">
-                            <i className="fas fa-shopping-cart"></i> Create
-                            Order
+                            Create Order
                           </Button>
                         </Link>
                       </div>
