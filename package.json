@@ -4,7 +4,7 @@
   "description": "Simple online order app with MERN",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --timeout 10000",
     "start": "node server.js",
     "server": "nodemon server",
     "client": "npm start --prefix client",
@@ -23,8 +23,12 @@
     "express": "^4.17.1",
     "mongoose": "^5.9.19",
     "morgan": "^1.10.0",
-    "path": "^0.12.7",
     "shortid": "^2.2.15",
     "uniqid": "^5.2.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^6.1.4"
   }
 }

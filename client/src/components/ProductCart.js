@@ -150,12 +150,13 @@ class ProductCart extends Component {
                       </div>
                     </td>
                     <td data-th="Price">RM {order.items[0].price}</td>
-                    <td data-th="Quantity">
-                      <input
+                    <td data-th="Quantity" className="text-center">
+                      {/* <input
                         type="number"
                         className="form-control text-center"
                         defaultValue={order.items[0].qty}
-                      />
+                      /> */}
+                      {order.items[0].qty}
                     </td>
                     <td data-th="Status" className="text-center">
                       {order.status}
