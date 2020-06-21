@@ -24,6 +24,15 @@
 }
 
 @media screen and (max-width: 600px) {
+  .card-img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .product-img{
+    height: 5%;
+    object-fit: cover;
+  }
   table#cart tbody td .form-control {
     width: 20%;
     display: inline !important;

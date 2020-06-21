@@ -51,7 +51,7 @@ class ProductDetail extends Component {
         <Container>
           <br />
           <div className="card mb-3">
-            <div className="row no-gutters">
+            <div className="row no-gutters justify-content-center">
               <div className="col-4">
                 <img
                   src={product.imgUrl}
@@ -63,16 +63,16 @@ class ProductDetail extends Component {
                 <h5 className="card-title">{product.name}</h5>
                 <p className="card-text">{product.description}</p>
                 <p className="card-text">
-                  <span className="badge badge-dark">{product.price}</span>
+                  <span className="badge badge-dark">RM {product.price}</span>
                 </p>
                 <div className="form-group row">
                   <label
                     htmlFor="example-number-input"
-                    className="col-2 col-form-label"
+                    className="col-sm-2 col-form-label"
                   >
                     Quantity
                   </label>
-                  <div className="col-10">
+                  <div className="col-sm">
                     <input
                       className="form-control"
                       type="number"

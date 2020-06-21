@@ -39,7 +39,7 @@ class ProductList extends Component {
         <Row>
           {products
             ? products.map((product, index) => (
-                <div className="col-4" key={index}>
+                <div className="col-sm" key={index}>
                   <div className="card">
                     <img
                       className="card-img product-img"
