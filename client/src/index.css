@@ -24,6 +24,15 @@
 }
 
 @media screen and (max-width: 600px) {
+  .h1-mobile{
+    font-size: 20px;
+  }
+  .h4-mobile{
+    font-size: 16px;
+  }
+  .h5-mobile{
+    font-size: 14px;
+  }
   .card-img{
     width: 100%;
     height: auto;

@@ -43,9 +43,9 @@ class OrderStatus extends Component {
                       <div className="card-body cleartfix">
                         <div className="media align-items-stretch">
                           <div className="media-body">
-                            <h4>{order.orderName}</h4>
+                            <h4 className="h4-mobile">{order.orderName}</h4>
                             <span>Tracking code: {order.urlId}</span>
-                            <h5 className="mt-3">Ordered item: </h5>
+                            <h5 className="mt-3 h5-mobile">Ordered item: </h5>
                             <ul>
                               {order.items.map((item, index) => (
                                 <li key={index}>
@@ -55,7 +55,7 @@ class OrderStatus extends Component {
                             </ul>
                           </div>
                           <div className="align-self-center">
-                            <h1>RM{order.totalPrice.toFixed(2)}</h1>
+                            <h1 className="h1-mobile">RM{order.totalPrice.toFixed(2)}</h1>
                           </div>
                         </div>
                       </div>
