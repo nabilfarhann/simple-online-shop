@@ -44,7 +44,7 @@ class OrderStatus extends Component {
                         <div className="media align-items-stretch">
                           <div className="media-body">
                             <h4 className="h4-mobile">{order.orderName}</h4>
-                            <span>Tracking code: {order.urlId}</span>
+                            <span className="h4-mobile">Tracking code: {order.urlId}</span>
                             <h5 className="mt-3 h5-mobile">Ordered item: </h5>
                             <ul>
                               {order.items.map((item, index) => (
